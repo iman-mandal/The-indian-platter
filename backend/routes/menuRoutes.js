@@ -20,7 +20,7 @@ router.post('/add',jwtAuthMiddleware,adminOnly ,async (req, res) =>{
     }
 })
 
-// GET method to get the Menu Items
+// GET method to get the Menu Items.
 router.get('/', async (req, res) =>{
     try{
         const data = await MenuItem.find();
