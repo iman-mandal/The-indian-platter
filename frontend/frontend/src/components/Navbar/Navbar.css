@@ -1,0 +1,44 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background: #49df83;
+    border-bottom: 1px solid #eee
+}
+
+.brand {
+    font-weight: 700;
+    color: #333;
+    text-decoration: none
+}
+
+.nav-right a {
+    margin-left: 16px;
+    color: #333;
+    text-decoration: none
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer
+}
+
+.btn.primary {
+    background: #2b8aef;
+    color: #fff;
+    border: none
+}
+
+.small {
+    padding: 6px 10px
+}
+
+.username {
+    margin-left: 12px;
+    margin-right: 8px;
+    color: #555
+}

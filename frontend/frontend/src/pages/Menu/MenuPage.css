@@ -1,0 +1,41 @@
+.menuContaner{
+    display: flex;
+    min-height: 76vh;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+
+}
+
+.menu-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff
+}
+
+.menu-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover
+}
+
+.card-body {
+    padding: 12px
+}
+
+.card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px
+}
+
+.price {
+    font-weight: 700
+}

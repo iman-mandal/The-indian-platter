@@ -1,0 +1,24 @@
+.adminContainer{
+    display: flex;
+    min-height: 75vh;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.admin-grid {
+    display: flex;
+    gap: 16px;
+    padding: 16px
+}
+
+.admin-card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    background: #fff;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600
+}
