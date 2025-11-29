@@ -1,33 +1,38 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
-// Create context
-const CartContext = createContext();
+export const CartContext = createContext();
 
-// Provider component
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([]);
 
-    // Add item to cart
-    const addToCart = (item) => {
-        setCart((prev) => [...prev, item]);
-    };
+  // 👉 Load saved cart on page load
+  useEffect(() => {
+    const saved = localStorage.getItem("cartItems");
+    if (saved) {
+      setCart(JSON.parse(saved));
+    }
+  }, []);
 
-    // Remove item from cart
-    const removeFromCart = (id) => {
-        setCart((prev) => prev.filter((i) => i._id !== id));
-    };
+  // 👉 Save cart to localStorage whenever cart changes
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+  }, [cart]);
 
-    // Clear cart
-    const clearCart = () => {
-        setCart([]);
-    };
+  // 👉 Add item to cart
+  const addToCart = (item) => {
+    setCart(prev => [...prev, item]);
+  };
 
-    return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
-            {children}
-        </CartContext.Provider>
-    );
+  // 👉 Remove item by ID
+  const removeFromCart = (id) => {
+    setCart(prev => prev.filter(i => i._id !== id));
+  };
+
+  return (
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
-// Custom hook for easier usage
 export const useCart = () => useContext(CartContext);

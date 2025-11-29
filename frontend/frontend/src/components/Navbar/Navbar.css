@@ -6,13 +6,28 @@
     background: #49df83;
     border-bottom: 1px solid #eee
 }
-
+.linkItem{
+    background:  rgb(249, 232, 85);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1.1rem;  
+}
 .brand {
     font-weight: 700;
-    color: #333;
+    font-size: 1.5rem;
+    color: #ffffff;
     text-decoration: none
 }
-
+.logout{
+    background:  rgb(246, 35, 35);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
 .nav-right a {
     margin-left: 16px;
     color: #333;
