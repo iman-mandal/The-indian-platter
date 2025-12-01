@@ -22,8 +22,12 @@ export default function Navbar() {
             </div>
             <div className="nav-right">
                 <Link className='linkItem' to="/menu">Menu</Link>
-                {user && <Link className='linkItem' to="/cart">Cart</Link>}
-                {user && <Link className='linkItem' to="/orders">My Orders</Link>}
+                {user && user.role !== 'admin' && (
+                    <>
+                        <Link className='linkItem' to="/cart">Cart</Link>
+                        <Link className='linkItem' to="/orders">My Orders</Link>
+                    </>
+                )}
                 {user?.role === 'admin' && <Link to="/admin/dashboard">Admin</Link>}
                 {!user ? (
                     <>
